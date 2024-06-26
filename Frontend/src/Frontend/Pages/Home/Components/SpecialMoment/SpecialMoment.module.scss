@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.specialMoment{
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container{
+        width: 80%;
+        min-height: 550px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .specialMomentHeading{
+            width: 100%;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            h1{
+                font-size: 48px;
+                font-weight: 700;
+            }
+        }
+        .moments{
+            width: 100%;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .momentCards{
+                width: 23%;
+                min-height: 350px;
+                display: flex;
+                align-items: end;
+                justify-content: center;
+                background-image: url(https://cms-live-rc.pandora.net/resource/responsive-image/3041434/m76-mega-spotter-module-hybrid/xs/11/q224-summer-product-03-rgb-extended-discover-pandora.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding: 10px;
+                .text{
+                    width: 80%;
+                    min-height: 50px;
+                    background-color:white ;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px;
+                    p{
+                        text-align: center;
+                        border-bottom: 1px solid black;
+                    }
+                }
+            }
+            .momentCardsTwo{
+                width: 23%;
+                min-height: 350px;
+                display: flex;
+                align-items: end;
+                justify-content: center;
+                background-image: url(https://cms-live-rc.pandora.net/resource/responsive-image/3099954/m76-mega-spotter-module-square/xs/3/medium-q224-diamonds-model-01-rgb.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding: 10px;
+                .text{
+                    width: 90%;
+                    min-height: 50px;
+                    background-color:white ;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px;
+                    p{
+                        text-align: center;
+                        font-size: 13px;
+                        border-bottom: 1px solid black;
+                    }
+                }
+            }
+            .momentCardsThree{
+                width: 23%;
+                min-height: 350px;
+                display: flex;
+                align-items: end;
+                justify-content: center;
+                background-image: url(https://cms-live-rc.pandora.net/resource/responsive-image/2862494/m76-mega-spotter-module-portrait/xs/8/q124-editorial-jan-most-loved-product-04-gallery.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding: 10px;
+                .text{
+                    width: 90%;
+                    min-height: 50px;
+                    background-color:white ;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px;
+                    p{
+                        text-align: center;
+                        font-size: 13px;
+                        border-bottom: 1px solid black;
+                    }
+                }
+            }
+            .momentCardsFour{
+                width: 23%;
+                min-height: 350px;
+                display: flex;
+                align-items: end;
+                justify-content: center;
+                background-image: url(https://cms-live-rc.pandora.net/resource/responsive-image/2886834/m76-mega-spotter-module-portrait/xs/5/medium-2024-val-onskin-some-06-rgb-1-.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding: 10px;
+                .text{
+                    width: 90%;
+                    min-height: 50px;
+                    background-color:white ;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px;
+                    p{
+                        text-align: center;
+                        font-size: 13px;
+                        border-bottom: 1px solid black;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:767px) {
+    .specialMoment{
+        .container{
+            .specialMomentHeading{
+                width: 70%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .moments{
+                flex-wrap: wrap;
+                gap: 20px;
+                margin: 20px 0;
+                .momentCards{
+                    width: 45%;
+                    margin: 20px 0;
+                }
+                .momentCardsTwo{
+                    width: 45%;
+                    margin: 20px 0;
+                }
+                .momentCardsThree{
+                    width: 45%;
+                    margin: 20px 0;
+                }
+                .momentCardsFour{
+                    width: 45%;
+                    margin: 20px 0;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:575px) {
+    .specialMoment{
+        .container{
+            .specialMomentHeading{
+                width: 80%;
+                text-align: center;
+                margin-bottom: 10px;
+                h1{
+                    font-size: 35px;
+                }
+            }
+            .moments{
+                flex-wrap: wrap;
+                gap: 20px;
+                margin: 20px 0;
+                .momentCards{
+                    width: 95%;
+                    margin: 20px 0;
+                }
+                .momentCardsTwo{
+                    width: 95%;
+                    margin: 20px 0;
+                }
+                .momentCardsThree{
+                    width: 95%;
+                    margin: 20px 0;
+                }
+                .momentCardsFour{
+                    width: 95%;
+                    margin: 20px 0;
+                }
+            }
+        }
+    }
+}

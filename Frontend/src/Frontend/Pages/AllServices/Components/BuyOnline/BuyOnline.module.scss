@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.buyOnline{
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    .container{
+        width: 80%;
+        min-height: 550px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .buyCard{
+            width: 100%;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            .buyImg{
+                width: 70%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                    width: 100%;
+                }
+            }
+            .buyContent{
+                width: 70%;
+                display: flex;
+                align-items: start;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+                h1{
+                    font-size: 22px;
+                    font-weight: 700;
+                }
+                p{
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+                button{
+                    width: 130px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    padding: 0px 5px;
+                    height: 50px;
+                    border: none;
+                    border-bottom: 2px solid pink;
+                    background-color: transparent;
+                    cursor: pointer;
+                    font-size: 13px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:575px) {
+    .buyOnline{
+        .container{
+            .buyCard{
+                .buyImg{
+                    width: 100%;
+                }
+                .buyContent{
+                    h1{
+                        font-size: 17px;
+                    }
+                    p{
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}

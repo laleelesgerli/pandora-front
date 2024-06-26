@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.ourStory{
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    .container{
+        width: 80%;
+        min-height: 400px;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        background-image: url(https://cms-live-rc.pandora.net/resource/responsive-image/1145938/m37-hybrid-plp-hero-module/xs/3/spr19-social-sketch-butterfly-ring-01-cmyk-copy.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .ourStoryText{
+            width: 80%;
+            min-height: 200px;
+            padding: 20px 0;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            h1{
+                font-size: 56px;
+                font-weight: 700;
+            }
+        }
+    }
+}
+@media screen and (max-width:575px) {
+    .ourStory{
+        .container{
+            .ourStoryText{
+                h1{
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    min-height: 225px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    .menuContent {
+        display: none;
+    }
+
+    .buyNow {
+        width: 100%;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: pink;
+
+        a {
+            color: black;
+            font-size: 11px;
+            font-weight: bold;
+        }
+    }
+
+    .headerMain {
+        width: 90%;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+
+        .logo {
+            width: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            h1{
+                font-size: 25px;
+            }
+        }
+
+        .container {
+            display: none;
+        }
+
+        .search {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            input {
+                width: 250px;
+                height: 50px;
+                padding: 0px 10px;
+                font-weight: 500;
+                border: 1px solid rgba(128, 128, 128, 0.421);
+                border-right: none;
+                outline: none;
+            }
+
+            .searchIcon {
+                button {
+                    width: 50px;
+                    height: 50px;
+                    background-color: white;
+                    color: gray;
+                    font-size: 20px;
+                    border: 1px solid rgba(128, 128, 128, 0.421);
+                    border-left: none;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .icons {
+            width: 15%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .icon {
+                width: 30%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 25px;
+                font-weight: 300;
+                border-bottom: 3px solid transparent;
+                transition: 0.5s;
+                height: 50px;
+
+                &:hover {
+                    transition: 0.5s;
+                    border-bottom: 3px solid pink;
+                }
+            }
+        }
+
+        .hamburger {
+            display: none;
+        }
+    }
+
+    .dropdown{
+        display: none;
+    }
+
+    .headerContent {
+        width: 100%;
+        min-height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 5px solid pink;
+
+        ul {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+
+            li {
+                list-style-type: none;
+
+                a {
+                    text-decoration: none;
+                    cursor: pointer;
+                    color: black;
+                    font-size: 15px;
+                    font-weight: 400;
+                    border-bottom: 3px solid transparent;
+                    transition: 0.5s;
+                    padding-bottom: 10px;
+
+                    &:hover {
+                        transition: 0.5s;
+                        border-bottom: 3px solid pink;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
+    .header {
+        min-height: 150px;
+
+        .headerMain {
+            .icons {
+                display: none;
+            }
+
+            .search {
+                display: none;
+            }
+
+            .logo {
+                width: 30%;
+            }
+
+            .hamburger {
+                display: block;
+                width: 10%;
+                font-size: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+        }
+
+        .dropdown {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 20px;
+            border-top: 5px solid pink;
+
+            .menu {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                flex-direction: column;
+                padding: 20px;
+
+                li {
+                    list-style-type: none;
+                }
+
+                a {
+                    text-decoration: none;
+                    cursor: pointer;
+                    color: black;
+                    font-size: 15px;
+                    font-weight: 400;
+                    border-bottom: 3px solid transparent;
+                    transition: 0.5s;
+                    padding-bottom: 10px;
+
+                    &:hover {
+                        transition: 0.5s;
+                        border-bottom: 3px solid pink;
+                    }
+                }
+
+                .icons {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    ul {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 20px;
+
+                        li {
+                            a {
+                                font-weight: 300;
+                                border-bottom: 3px solid transparent;
+                                transition: 0.5s;
+                                height: 50px;
+                                font-size: 25px;
+                                &:hover {
+                                    transition: 0.5s;
+                                    border-bottom: 3px solid pink;
+                                }
+
+                                
+                            }
+                        }
+                    }
+                }
+
+                .search {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    input {
+                        width: 175px;
+                        height: 50px;
+                        padding: 0px 10px;
+                        font-weight: 500;
+                        border: 1px solid rgba(128, 128, 128, 0.421);
+                        border-right: none;
+                        outline: none;
+                    }
+        
+                    .searchIcon {
+                        button {
+                            width: 50px;
+                            height: 50px;
+                            background-color: white;
+                            color: gray;
+                            font-size: 20px;
+                            border: 1px solid rgba(128, 128, 128, 0.421);
+                            border-left: none;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .headerContent {
+            display: none;
+        }
+    }
+}

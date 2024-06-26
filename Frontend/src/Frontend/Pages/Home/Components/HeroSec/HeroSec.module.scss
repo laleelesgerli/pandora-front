@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.heroSec{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    background-image: url(https://cms-live-rc.pandora.net/resource/responsive-image/3100398/m78-hero-module/xs/14/m78-hero-gold-essence.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .btn{
+        width: 90%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        button{
+            width: 250px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.559);
+            color: black;
+            border: none;
+        }
+    }
+}

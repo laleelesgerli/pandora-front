@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.myPandora{
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    .container{
+        width: 80%;
+        min-height: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .cards{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+            flex-wrap: wrap;
+                .card{
+                    width: 23%;
+                    min-height: 300px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    flex-direction: column;
+                    gap: 20px;
+                    color: white;
+                    text-align: center;
+                    padding: 40px 10px 10px 10px;
+                    cursor: pointer;
+                    .icon{
+                        font-size: 30px;
+                    }
+                    h6{
+                        font-size: 12px;
+                        font-weight: 300;
+                    }
+                    p{
+                        font-size: 22px;
+                        font-weight: 400;
+                    }
+                }
+        }
+    }
+}
+@media screen and (max-width:991px) {
+    .myPandora{
+        .container{
+            .cards{
+                flex-wrap: wrap;
+                .card{
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:767px) {
+    .myPandora{
+        .container{
+            .cards{
+                flex-wrap: wrap;
+                .card{
+                    width: 45%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:767px) {
+    .myPandora{
+        .container{
+            .cards{
+                flex-wrap: wrap;
+                .card{
+                    width: 95%;
+                }
+            }
+        }
+    }
+}

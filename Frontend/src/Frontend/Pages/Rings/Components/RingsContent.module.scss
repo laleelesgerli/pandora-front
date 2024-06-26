@@ -1,0 +1,289 @@
+
+.necklacesContent {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+  }
+  
+  .necklacesHeading {
+    width: 100%;
+    min-height: 200px;
+    background-image: url(https://us.pandora.net/on/demandware.static/-/Sites-pandora-storefront-catalog-en-US/default/dw69f7876e/cat_banners/Q1_Rings_PLP.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px 40px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+  
+    p {
+      width: 50%;
+    }
+  }
+  
+  .sales {
+    width: 90%;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .cards {
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+  }
+  
+  .products {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    width: 23%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+    cursor: pointer;
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    img {
+      border-radius: 8px;
+      margin-bottom: 10px;
+      width: 100%;
+      height: auto;
+    }
+  
+    h3 {
+      font-size: 12px;
+      color: black;
+      margin: 10px 0;
+      font-weight: 400;
+    }
+  
+    p {
+      font-size: 16px;
+      color: rgb(217, 31, 70);
+      font-weight: 400;
+    }
+  
+    .button {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+  
+    &:hover .button {
+      opacity: 1;
+    }
+  
+    .button button {
+      margin-top: 10px;
+      width: 150px;
+      height: 30px;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.5s;
+  
+      &:hover {
+        background-color: pink;
+      }
+    }
+  }
+  
+  .formik {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 150px;
+    gap: 20px;
+  }
+  
+  .search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+  
+    input {
+      width: 250px;
+      height: 40px;
+      padding: 0px 10px;
+      border: 1px solid black;
+    }
+  
+    button {
+      width: 100px;
+      height: 40px;
+      border: none;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+      transition: 0.5s;
+  
+      &:hover {
+        background-color: pink;
+      }
+    }
+  }
+  
+  .sort {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+  
+    .sortByLetter {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+  
+      button {
+        width: 70px;
+        height: 30px;
+        border: none;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        transition: 0.5s;
+  
+        &:hover {
+          background-color: pink;
+        }
+      }
+    }
+  
+    .sortByPrice {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+  
+      button {
+        width: 150px;
+        height: 30px;
+        border: none;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        transition: 0.5s;
+  
+        &:hover {
+          background-color: pink;
+        }
+      }
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .newItems {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .loadMore {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px auto;
+    display: block;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: pink;
+    }
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .card {
+      width: 30%;
+    }
+  }
+  
+  @media screen and (max-width: 800px) {
+    .card {
+      width: 45%;
+    }
+  }
+  
+  @media screen and (max-width: 575px) {
+    .necklacesHeading {
+      p {
+        width: 70%;
+      }
+    }
+    .sales {
+      h4 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 13px;
+      }
+    }
+    .card {
+      width: 70%;
+    }
+  }
+  
