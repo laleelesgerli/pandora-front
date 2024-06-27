@@ -19,6 +19,7 @@ import Rings from '../Pages/Rings/Rings'
 import Earrings from '../Pages/Earrings/Earrings'
 import Necklaces from '../Pages/Necklaces/Necklaces'
 import AddToDo from '../Pages/AddToDo/AddToDo'
+import Payment from '../Pages/Payment/Payment'
 
 const Router = () => {
   return (
@@ -57,6 +58,7 @@ const Router = () => {
         <Route path="/add-new-todo" element={<AddToDo />} />
         <Route path="/product/:note_id" element={<DetailPage/>} />
         <Route path="/charms" element={<Charms/>} />
+        <Route path="/basket/payment" element={<Payment/>} />
       </Routes>
     </BrowserRouter>
   )

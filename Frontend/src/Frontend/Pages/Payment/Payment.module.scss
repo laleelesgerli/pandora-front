@@ -1,0 +1,139 @@
+.paymentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+  
+    .paymentForm {
+      background-color: #ffffff;
+      box-shadow: 0px 0px 10px rgba(218, 83, 83, 0.568);
+      border-radius: 8px;
+      padding: 20px;
+      width: 50%;
+  
+      @media (max-width: 991px) {
+        width: 70%; /* Ekran genişliği 991px'den küçükse formun genişliğini ayarlayın */
+      }
+  
+      @media (max-width: 767px) {
+        width: 80%; /* Ekran genişliği 767px'den küçükse formun genişliğini ayarlayın */
+      }
+  
+      @media (max-width: 575px) {
+        width: 90%; /* Ekran genişliği 575px'den küçükse formun genişliğini ayarlayın */
+        padding: 10px; /* Küçük ekranlar için padding'i azaltın */
+      }
+  
+      @media (max-width: 300px) {
+        width: 100%; /* Ekran genişliği 300px'den küçükse formun genişliğini tam ekran yapın */
+      }
+  
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #333333;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #666666;
+      }
+  
+      form {
+        .formGroup {
+          margin-bottom: 20px;
+  
+          label {
+            display: block;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333333;
+          }
+  
+          input[type='text'],
+          input[type='password'] {
+            width: calc(100% - 70px);
+            padding: 12px;
+            font-size: 1rem;
+            border: 2px solid #cccccc;
+            border-radius: 4px;
+            transition: border-color 0.2s ease;
+  
+            &:focus {
+              outline: none;
+              border-color: pink;
+            }
+  
+            &.showIcon {
+              padding-right: 50px;
+            }
+  
+            &::-ms-reveal,
+            &::-ms-clear {
+              display: none;
+            }
+  
+            &::after {
+              content: '\f06e';
+              font-family: 'Font Awesome 5 Free';
+              position: absolute;
+              top: 50%;
+              right: 20px;
+              transform: translateY(-50%);
+              font-size: 1rem;
+              color: #666666;
+              cursor: pointer;
+              pointer-events: none;
+            }
+  
+            &.showIcon:focus::after {
+              color: #3182ce;
+            }
+          }
+  
+          .cvvInput {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+  
+            button {
+              background-color: pink;
+              color: #ffffff;
+              font-weight: bold;
+              padding: 14px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              transition: background-color 0.2s ease;
+  
+              &:hover {
+                background-color: black;
+              }
+            }
+          }
+        }
+  
+        .submitButton {
+          background-color: pink;
+          color: #ffffff;
+          font-weight: bold;
+          padding: 14px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+  
+          &:hover {
+            background-color: black;
+          }
+        }
+      }
+    }
+  }
+  
