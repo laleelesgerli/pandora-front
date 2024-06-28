@@ -6,17 +6,22 @@ import styles from './AddToDo.module.scss';
 
 const AddToDo = () => {
   const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [addTodo] = useAddTodoMutation();
-
+  const [price, setPrice] = useState('');
+  const [description, setDescription] = useState('');
+  const [thumbnail, setThumbnail]= useState('');
+  const [category, setCategory] = useState('');
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const newTodo = await addTodo({
         title,
-        body
+        description,
+        price,
+        category,
+        thumbnail,
       }).unwrap();
       setTimeout(() => {
         dispatch({ type: 'todo/addTodo', payload: newTodo });
@@ -42,13 +47,44 @@ const AddToDo = () => {
           />
         </div>
         <div className={styles.inputGroup}>
-          <label htmlFor="body">Body:</label>
-          <textarea
-            id="body"
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-            className={styles.textarea}
-          ></textarea>
+          <label htmlFor="description">Description:</label>
+          <input
+            type="text"
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className={styles.input}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="price">Price:</label>
+          <input
+            type="text"
+            id="price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            className={styles.input}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="category">Category:</label>
+          <input
+            type="text"
+            id="category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className={styles.input}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="thumbnail">Thumbnail link:</label>
+          <input
+            type="text"
+            id="thumbnail"
+            value={thumbnail}
+            onChange={(e) => setThumbnail(e.target.value)}
+            className={styles.input}
+          />
         </div>
         <div className={styles.buttons}>
           <button type="submit" className={styles.submitButton}>Add Product</button>

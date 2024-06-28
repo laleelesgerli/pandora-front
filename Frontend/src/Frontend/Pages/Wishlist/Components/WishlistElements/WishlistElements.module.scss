@@ -1,0 +1,108 @@
+.wishlistList {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 0;
+  
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+      text-align: center;
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+      width: 90%;
+      max-width: 1200px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+  
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1rem;
+        width: calc(33.333% - 20px);
+        transition: all 0.3s ease;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        min-height: 300px; 
+  
+        &:hover {
+          box-shadow: 0 8px 16px rgba(218, 83, 83, 0.3);
+        }
+  
+        img {
+          width: 150px;
+          height: 150px;
+          object-fit: cover;
+          margin-bottom: 10px;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+  
+        div {
+          text-align: center;
+  
+          h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+          }
+  
+          p {
+            margin-bottom: 1rem;
+            color: #666;
+          }
+  
+          .buttonContainer {
+            display: none;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 10px;
+  
+            button {
+              border: none;
+              background-color: #000;
+              color: #fff;
+              padding: 0.5rem 1rem;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+              border-radius: 4px;
+              text-transform: uppercase;
+              font-weight: bold;
+  
+              &:hover {
+                background-color: pink;
+              }
+            }
+          }
+        }
+  
+        &:hover .buttonContainer {
+          display: flex;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .wishlistList ul li {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .wishlistList ul li {
+      width: 100%;
+    }
+  }
+  

@@ -5,57 +5,57 @@
   justify-content: center;
   flex-direction: column;
   margin: 20px 0;
+
   h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
     color: #333;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
   }
 
   ul {
     list-style-type: none;
     padding: 0;
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 
     li {
       display: flex;
+      flex-direction: column;
       align-items: center;
       border: 1px solid #ddd;
       border-radius: 8px;
       padding: 1rem;
-      margin-bottom: 1rem;
+      width: calc(33.333% - 20px);
       transition: all 0.3s ease;
-      width: 30%;
-      flex-direction: column;
-      gap: 10px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      min-height: 320px; 
 
       &:hover {
-        box-shadow: 0px 0px 10px rgba(218, 83, 83, 0.568);
+        box-shadow: 0 8px 16px rgba(218, 83, 83, 0.3);
       }
 
       img {
-        width: 100px;
-        margin-bottom: 10px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         object-fit: cover;
-        margin-right: 1rem;
+        margin-bottom: 10px;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
 
       div {
-        flex: 1;
+        text-align: center;
+
         h3 {
           font-size: 1.2rem;
           margin-bottom: 0.5rem;
           color: #333;
-          text-align: center;
         }
 
         p {
@@ -64,17 +64,16 @@
         }
 
         .buttonContainer {
-          display: flex;
-          flex-wrap: wrap;
+          display: none;
           gap: 0.5rem;
-          align-items: center;
           justify-content: center;
           margin-top: 10px;
+
           button {
             border: none;
-            background-color: black;
-            color: white;
-            padding: 0.75rem 1.5rem;
+            background-color: #000;
+            color: #fff;
+            padding: 0.5rem 1rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
             border-radius: 4px;
@@ -87,110 +86,22 @@
           }
         }
       }
-    }
-  }
 
-  // Media Queries for responsiveness
-  @media (max-width: 768px) {
-    ul {
-      li {
-        flex-direction: column;
-        align-items: flex-start;
-
-        img {
-          width: 80px;
-          height: 80px;
-          margin-bottom: 1rem;
-        }
-
-        div {
-          h3 {
-            font-size: 1rem;
-          }
-
-          p {
-            font-size: 0.9rem;
-          }
-
-          .buttonContainer {
-            button {
-              padding: 0.5rem 1rem;
-              font-size: 0.9rem;
-            }
-          }
-        }
+      &:hover .buttonContainer {
+        display: flex;
       }
     }
   }
+}
 
-  @media (max-width: 480px) {
-    h2 {
-      font-size: 1.4rem;
-    }
-
-    ul {
-      li {
-        padding: 0.5rem;
-
-        img {
-          width: 80px;
-          height: 80px;
-        }
-
-        div {
-          h3 {
-            font-size: 1.1rem;
-          }
-
-          p {
-            font-size: 1.0rem;
-          }
-
-          .buttonContainer {
-            button {
-              padding: 0.4rem 0.8rem;
-              font-size: 0.8rem;
-            }
-          }
-        }
-      }
-    }
+@media (max-width: 768px) {
+  .basketList ul li {
+    width: calc(50% - 20px);
   }
+}
 
-//   @media (max-width: 300px) {
-//     h2 {
-//       font-size: 1rem;
-//       height: auto;
-//       margin-bottom: 0.5rem;
-//     }
-
-//     ul {
-//       li {
-//         padding: 0.5rem;
-
-//         img {
-//           width: 50px;
-//           height: 50px;
-//         }
-
-//         div {
-//           h3 {
-//             font-size: 0.8rem;
-//           }
-
-//           p {
-//             font-size: 0.7rem;
-//           }
-
-//           .buttonContainer {
-//             button {
-//               padding: 0.3rem 0.6rem;
-//               font-size: 0.7rem;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+@media (max-width: 480px) {
+  .basketList ul li {
+    width: 100%;
+  }
 }

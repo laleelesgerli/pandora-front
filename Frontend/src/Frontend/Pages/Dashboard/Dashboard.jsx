@@ -29,7 +29,7 @@ const Dashboard = () => {
       await deleteTodo(id).unwrap();
       setTimeout(() => {
         dispatch(removeTodo(id))
-      }, 1500);
+      }, 1000);
 
     } catch (err) {
       console.error('Failed to delete the todo:', err);
@@ -47,8 +47,11 @@ const Dashboard = () => {
         {error && <p>Error loading todos</p>}
         {data && data.map(item => (
           <div key={item._id} className={styles.todoItem}>
+            <p>{item.thumbnail}</p>
             <h3>{item.title}</h3>
-            <p>{item.body}</p>
+            <p>{item.description}</p>
+            <p>{item.price}</p>
+            <p>{item.category}</p>
             <button onClick={() => handleDelete(item._id)} className={styles.deleteButton}>Delete</button>
           </div>
         ))}

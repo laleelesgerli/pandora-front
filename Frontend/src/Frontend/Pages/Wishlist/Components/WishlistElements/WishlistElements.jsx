@@ -2,110 +2,72 @@ import React, { useEffect, useState } from "react";
 import styles from './WishlistElements.module.scss';
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-// Sepet listesi bileşeni
 const WishlistElements = () => {
-    const [basketItems, setBasketItems] = useState([]);
-    const { userInfo } = useSelector((state) => state.auth);
-    const navigate = useNavigate();
+  const [wishlistItems, setWishlistItems] = useState([]);
+  const { userInfo } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        // localStorage'den sepet listesini alın
-        const storedwishlistList = localStorage.getItem('wishlistList');
+  useEffect(() => {
+    const storedWishlist = localStorage.getItem('wishlistList');
+    if (storedWishlist) {
+      const parsedWishlist = JSON.parse(storedWishlist);
+      setWishlistItems(parsedWishlist);
+    }
+  }, []);
 
-        if (storedwishlistList) {
-            const parsedwishlistList = JSON.parse(storedwishlistList);
-            // Her ürünün count değerini sayıya dönüştür
-            const updatedBasketItems = parsedwishlistList.map(item => ({
-                ...item,
-                count: parseInt(item.count) || 1, // Eğer count NaN veya undefined ise 1 olarak ayarla
-                price: parseFloat(item.price).toFixed(2) // Fiyatı ondalık kısmı iki basamakla sınırla
-            }));
-            setBasketItems(updatedBasketItems);
-        }
-    }, []);
+  const handleRemoveItem = (itemId) => {
+    const updatedWishlistItems = wishlistItems.filter(item => item.id !== itemId);
+    localStorage.setItem('wishlistList', JSON.stringify(updatedWishlistItems));
+    setWishlistItems(updatedWishlistItems);
+    toast.success('Item removed from wishlist!');
+  };
 
-    // Ürün sayısını artırma işlevi
-    const handleIncreaseQuantity = (itemId) => {
-        const updatedBasketItems = basketItems.map(item => {
-            if (item.id === itemId) {
-                const newCount = item.count + 1;
-                const newPrice = item.price / item.count * newCount; // Yeni fiyatı hesapla
+  const handleAddToBasket = (item) => {
+    const basketList = JSON.parse(localStorage.getItem('basketList')) || [];
+    basketList.push({ ...item, count: 1 });
+    localStorage.setItem('basketList', JSON.stringify(basketList));
+    toast.success('Item added to basket!');
+  };
 
-                return {
-                    ...item,
-                    count: newCount,
-                    price: newPrice.toFixed(2) // Fiyatı güncelle, ondalık kısmı iki basamakla sınırla
-                };
-            }
-            return item;
-        });
+  const filteredWishlistItems = userInfo ? wishlistItems.filter(item => item._id === userInfo._id) : [];
 
-        // Güncellenmiş sepet listesini localStorage'e kaydedin
-        localStorage.setItem('wishlistList', JSON.stringify(updatedBasketItems));
-        
-        // State'i güncelleyin
-        setBasketItems(updatedBasketItems);
-    };
+  const handleWishlistView = () => {
+    if (!userInfo) {
+      toast.warn('You must register to view your wishlist.');
+      setTimeout(() => {
+        navigate('/register', { state: { from: window.location.pathname } });
+      }, 1000);
+    }
+  };
 
-    // Ürün sayısını azaltma veya ürünü sepetten kaldırma işlevi
-    const handleDecreaseQuantity = (itemId) => {
-        const updatedBasketItems = basketItems.map(item => {
-            if (item.id === itemId) {
-                if (item.count > 1) {
-                    const newCount = item.count - 1;
-                    const newPrice = item.price / item.count * newCount; // Yeni fiyatı hesapla
+  useEffect(() => {
+    handleWishlistView();
+  }, [userInfo]);
 
-                    return {
-                        ...item,
-                        count: newCount,
-                        price: newPrice.toFixed(2) // Fiyatı güncelle, ondalık kısmı iki basamakla sınırla
-                    };
-                } else {
-                    // Ürün adedi 1 ise ürünü sepetten kaldır
-                    return null;
-                }
-            }
-            return item;
-        }).filter(item => item !== null); // null olanları filtrele
-        
-        // Güncellenmiş sepet listesini localStorage'e kaydedin
-        localStorage.setItem('wishlistList', JSON.stringify(updatedBasketItems));
-        
-        // State'i güncelleyin
-        setBasketItems(updatedBasketItems);
-    };
-
-    // Kullanıcının sepet listesini _id'ye göre filtrele
-    const filteredBasketItems = basketItems.filter(item => item._id === userInfo._id);
-
-    const handlePayment = (itemPrice) => {
-        navigate('/basket/payment', { state: { itemPrice } });
-    };
-
-    return (
-        <div className={styles.wishlistList}>
-            <h2>Your Bag</h2>
-            <ul>
-                {filteredBasketItems.map((item, index) => (
-                    <li key={index}>
-                        <img src={item.thumbnail} alt={item.title} />
-                        <div>
-                            <h3>{item.title}</h3>
-                            <p>Price: {item.price}$</p>
-                            <p>Total: {item.count}</p>
-                            <div className={styles.buttonContainer}>
-                                <button onClick={() => handleIncreaseQuantity(item.id)}>+</button>
-                                {item.count === 1 && <button onClick={() => handleDecreaseQuantity(item.id)}>Remove</button>}
-                                {item.count > 1 && <button onClick={() => handleDecreaseQuantity(item.id)}>-</button>}
-                                <button onClick={() => handlePayment(item.price)}>Pay</button>
-                            </div>
-                        </div>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
+  return (
+    <div className={styles.wishlistList}>
+      <h2>Your Wishlist</h2>
+      <ul>
+        {filteredWishlistItems.map((item, index) => (
+          <li key={index}>
+            <img src={item.thumbnail} alt={item.title} />
+            <div>
+              <h3>{item.title}</h3>
+              <p>Price: {item.price}$</p>
+              <div className={styles.buttonContainer}>
+                <button onClick={() => handleRemoveItem(item.id)}>Remove</button>
+                <button onClick={() => handleAddToBasket(item)}>Add to Basket</button>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <ToastContainer />
+    </div>
+  );
 };
 
 export default WishlistElements;
