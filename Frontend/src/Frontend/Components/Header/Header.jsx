@@ -6,13 +6,17 @@ import { CiUser } from "react-icons/ci";
 import { PiShoppingBagThin } from "react-icons/pi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useNavigate } from 'react-router-dom';
-
+import { FaUserCircle } from "react-icons/fa";
 const Header = () => {
 
     const navigate = useNavigate()
 
     const goToHome = () => {
         navigate('/')
+    }
+
+    const goToProfile = () => {
+        navigate('/profile')
     }
 
     const goToWishlist = () => {
@@ -65,15 +69,8 @@ const Header = () => {
             </div>
             <div className={styles.headerMain}>
                 <div className={styles.logo}>
-                    <h1>PANDORA</h1>
+                    <h1 onClick={goToHome}>PANDORA</h1>
                 </div>
-
-                {/* <div className={styles.search}>
-                    <input type="text" placeholder='Search' />
-                    <div className={styles.searchIcon}>
-                        <button><CiSearch /></button>
-                    </div>
-                </div> */}
                 <div className={styles.icons}>
                     <div className={styles.icon}>
                         <CiHeart onClick={goToWishlist} />
@@ -83,6 +80,9 @@ const Header = () => {
                     </div>
                     <div className={styles.icon}>
                         <PiShoppingBagThin onClick={goToBasket} />
+                    </div>
+                    <div className={styles.icon}>
+                        <FaUserCircle onClick={goToProfile} />
                     </div>
                 </div>
                 <div className={styles.hamburger}>
@@ -111,14 +111,9 @@ const Header = () => {
                                 <li><a onClick={goToWishlist}><CiHeart /></a></li>
                                 <li><a onClick={goToUser}><CiUser /></a></li>
                                 <li><a onClick={goToBasket}><PiShoppingBagThin /></a></li>
+                                <li><a onClick={goToProfile}><FaUserCircle /></a></li>
                             </ul>
                         </li>
-                        {/* <li className={styles.search}>
-                            <input type="text" placeholder='Search' />
-                            <div className={styles.searchIcon}>
-                                <button><CiSearch /></button>
-                            </div>
-                        </li> */}
                     </ul>
                 ) : null}
             </div>

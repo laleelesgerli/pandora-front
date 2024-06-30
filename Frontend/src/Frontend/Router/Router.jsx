@@ -8,7 +8,6 @@ import PrivacyPolicy from '../Pages/PrivacyPolicy/PrivacyPolicy'
 import AllServices from '../Pages/AllServices/AllServices'
 import Register from '../Pages/Register/Register'
 import Profile from '../Pages/Profile/Profile'
-import Dashboard from '../Pages/Dashboard/Dashboard'
 import Login from '../Pages/Login/Login'
 import Basket from '../Pages/Basket/Basket'
 import Wishlist from '../Pages/Wishlist/Wishlist'
@@ -18,8 +17,9 @@ import Bracelets from '../Pages/Bracelets/Bracelets'
 import Rings from '../Pages/Rings/Rings'
 import Earrings from '../Pages/Earrings/Earrings'
 import Necklaces from '../Pages/Necklaces/Necklaces'
-import AddToDo from '../Pages/AddToDo/AddToDo'
 import Payment from '../Pages/Payment/Payment'
+import AdminHome from '../Pages/Register/Components/AdminHome/AdminHome'
+import Dashboard from '../Pages/Dashboard/Dashboard'
 
 const Router = () => {
   return (
@@ -55,9 +55,10 @@ const Router = () => {
         />} />
         <Route path='/earrings' element={<Earrings
         />} />
-        <Route path="/add-new-todo" element={<AddToDo />} />
+       
         <Route path="/product/:note_id" element={<DetailPage/>} />
         <Route path="/charms" element={<Charms/>} />
+        <Route path="/admin" element={<AdminHome/>}/>
         <Route path="/basket/payment" element={<Payment/>} />
       </Routes>
     </BrowserRouter>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 import { useLocation } from 'react-router-dom';
 import styles from './Payment.module.scss'; 
 const Payment = () => {

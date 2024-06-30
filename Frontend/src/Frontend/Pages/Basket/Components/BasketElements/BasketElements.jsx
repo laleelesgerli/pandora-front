@@ -15,16 +15,19 @@ const BasketElements = () => {
     if (storedBasketList) {
       const parsedBasketList = JSON.parse(storedBasketList);
       setBasketItems(parsedBasketList);
+      console.log("Initial basket items:", parsedBasketList);
     }
   }, []);
 
   const handleIncreaseQuantity = (itemId) => {
     const updatedBasketItems = basketItems.map(item => {
       if (item.id === itemId) {
-        return {
+        const updatedItem = {
           ...item,
           count: item.count + 1
         };
+        console.log("Increasing quantity", updatedItem);
+        return updatedItem;
       }
       return item;
     });

@@ -169,8 +169,6 @@ const DetailContent = () => {
                     <ProductCard/>
                 </div>
             </div>
-            {/* {userInfo && <BasketElements userId={userInfo._id} />}
-            <ToastContainer /> */}
         </div>
     );
 };

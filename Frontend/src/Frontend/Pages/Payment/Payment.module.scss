@@ -13,20 +13,20 @@
       width: 50%;
   
       @media (max-width: 991px) {
-        width: 70%; /* Ekran genişliği 991px'den küçükse formun genişliğini ayarlayın */
+        width: 70%;
       }
   
       @media (max-width: 767px) {
-        width: 80%; /* Ekran genişliği 767px'den küçükse formun genişliğini ayarlayın */
+        width: 80%;
       }
   
       @media (max-width: 575px) {
-        width: 90%; /* Ekran genişliği 575px'den küçükse formun genişliğini ayarlayın */
-        padding: 10px; /* Küçük ekranlar için padding'i azaltın */
+        width: 90%; 
+        padding: 10px; 
       }
   
       @media (max-width: 300px) {
-        width: 100%; /* Ekran genişliği 300px'den küçükse formun genişliğini tam ekran yapın */
+        width: 100%; 
       }
   
       h2 {
@@ -80,7 +80,6 @@
   
             &::after {
               content: '\f06e';
-              font-family: 'Font Awesome 5 Free';
               position: absolute;
               top: 50%;
               right: 20px;

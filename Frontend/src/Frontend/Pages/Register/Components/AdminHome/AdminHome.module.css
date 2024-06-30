@@ -1,0 +1,302 @@
+
+.adminHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .adminPanel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .welcome {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .logoutButton {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logoutButton:hover {
+    background-color: #e55b50;
+  }
+  
+  .searchBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .searchIcon {
+    color: #999;
+    margin-right: 10px;
+  }
+  
+  .searchInput {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .recordCount {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .tableContainer {
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+  }
+  
+  .userTable,
+  .basketTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .tableHeader {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .tableCell {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .tableRow:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .actionButtons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .deleteIcon {
+    color: #ff6f61;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .deleteIcon:hover {
+    color: #e55b50;
+  }
+  
+  .statusButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .statusButton.inactive {
+    background-color: #f44336;
+  }
+  
+  .formContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .formGroup {
+    margin-bottom: 20px;
+  }
+  
+  .formLabel {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .formInput,
+  .formTextarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .formTextarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .formButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .submitButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #45a049;
+  }
+  
+  .cancelButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancelButton:hover {
+    background-color: #e53935;
+  }
+  
+  .errorMessage {
+    color: red;
+    font-size: 14px;
+  }
+  
+  .updateButton {
+    background-color: #ffa726;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .updateButton:hover {
+    background-color: #fb8c00;
+  }
+  
+  .updateButton.disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+  
+  .unauthorized {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .unauthorizedText {
+    font-size: 24px;
+    color: #f44336;
+  }
+  
+  .loggingOut {
+    font-size: 20px;
+    color: #666;
+    text-align: center;
+  }
+  
+  .flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  @media (max-width: 600px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .searchBox {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .logoutButton {
+      margin-top: 10px;
+    }
+  
+    .tableContainer {
+      overflow-x: auto;
+    }
+  
+    .formContainer {
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 300px) {
+    .header {
+      align-items: center;
+    }
+  
+    .welcome {
+      font-size: 20px;
+    }
+  
+    .logoutButton {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+  
+    .searchInput {
+      width: 100%;
+      max-width: 200px;
+    }
+  
+    .submitButton,
+    .cancelButton,
+    .updateButton {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+  }
+  
